@@ -1,0 +1,137 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  name      String?
+  image     String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relations
+  restaurants Restaurant[]
+  dresses     Dress[]
+  photos      Photo[]
+  designs     Design[]
+  vendors     Vendor[]
+
+  @@map("users")
+}
+
+model Restaurant {
+  id          String   @id @default(cuid())
+  name        String
+  location    String
+  contact     String?
+  capacity    Int?
+  pricing     String?
+  availability String?
+  rating      Float?
+  description String?
+  images      String[] // Array of image URLs
+  isFavorite  Boolean  @default(false)
+  bookingStatus String @default("not_booked") // not_booked, booked, confirmed
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Relations
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("restaurants")
+}
+
+model Dress {
+  id          String   @id @default(cuid())
+  designer    String?
+  style       String?
+  color       String?
+  size        String?
+  price       Float?
+  availability String?
+  description String?
+  images      String[] // Array of image URLs
+  isFavorite  Boolean  @default(false)
+  tryOnDate   DateTime?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Relations
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("dresses")
+}
+
+model Photo {
+  id          String   @id @default(cuid())
+  title       String
+  category    String   // engagement, wedding, family, venue
+  description String?
+  imageUrl    String
+  tags        String[] // Array of tags
+  isFavorite  Boolean  @default(false)
+  photographer String?
+  location    String?
+  date        DateTime?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Relations
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("photos")
+}
+
+model Design {
+  id          String   @id @default(cuid())
+  name        String
+  category    String   // floral, decoration, color_palette, mood_board
+  description String?
+  images      String[] // Array of image URLs
+  colorPalette String[] // Array of hex colors
+  isFavorite  Boolean  @default(false)
+  vendor      String?
+  price       Float?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Relations
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("designs")
+}
+
+model Vendor {
+  id          String   @id @default(cuid())
+  name        String
+  type        String   // photographer, florist, decorator, caterer
+  contact     String?
+  email       String?
+  website     String?
+  location    String?
+  rating      Float?
+  description String?
+  portfolio   String[] // Array of portfolio image URLs
+  isFavorite  Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Relations
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("vendors")
+}
