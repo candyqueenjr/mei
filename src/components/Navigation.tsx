@@ -27,16 +27,16 @@ export default function Navigation() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   return (
-    <nav className="bg-gradient-to-r from-rose-100 to-rose-200 shadow-lg">
+    <nav className="bg-gradient-to-r from-red-100 to-red-200 shadow-lg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           {/* Logo */}
           <div className="flex items-center">
             <Link href="/" className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-rose-500 rounded-full flex items-center justify-center">
+              <div className="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center">
                 <span className="text-white font-bold text-lg">M</span>
               </div>
-              <span className="text-xl font-bold text-rose-700">Mei Wedding</span>
+              <span className="text-xl font-bold text-red-700">Mei Wedding</span>
             </Link>
           </div>
 
@@ -52,8 +52,8 @@ export default function Navigation() {
                   href={item.href}
                   className={`flex items-center space-x-2 px-3 py-2 rounded-lg transition-all duration-200 ${
                     isActive
-                      ? 'bg-rose-500 text-white shadow-md'
-                      : 'text-rose-700 hover:bg-rose-300 hover:text-white'
+                      ? 'bg-red-500 text-white shadow-md'
+                      : 'text-red-700 hover:bg-red-300 hover:text-white'
                   }`}
                 >
                   <Icon size={20} />
@@ -67,7 +67,7 @@ export default function Navigation() {
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="text-rose-700 hover:text-rose-900 focus:outline-none focus:text-rose-900"
+              className="text-red-700 hover:text-red-900 focus:outline-none focus:text-red-900"
             >
               {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -82,7 +82,7 @@ export default function Navigation() {
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden"
           >
-            <div className="px-2 pt-2 pb-3 space-y-1 bg-rose-50 rounded-lg mt-2">
+            <div className="px-2 pt-2 pb-3 space-y-1 bg-red-50 rounded-lg mt-2">
               {navItems.map((item) => {
                 const Icon = item.icon
                 const isActive = pathname === item.href
@@ -94,8 +94,8 @@ export default function Navigation() {
                     onClick={() => setIsMobileMenuOpen(false)}
                     className={`flex items-center space-x-3 px-3 py-2 rounded-lg transition-all duration-200 ${
                       isActive
-                        ? 'bg-rose-500 text-white'
-                        : 'text-rose-700 hover:bg-rose-300 hover:text-white'
+                        ? 'bg-red-500 text-white'
+                        : 'text-red-700 hover:bg-red-300 hover:text-white'
                     }`}
                   >
                     <Icon size={20} />
