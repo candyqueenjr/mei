@@ -1,6 +1,5 @@
 'use client'
 
-import Layout from '@/components/Layout'
 import { motion } from 'framer-motion'
 import { 
   Plus, 
@@ -29,8 +28,7 @@ export default function HomePage() {
   ]
 
   return (
-    <Layout>
-      <div className="space-y-8">
+    <div className="space-y-8">
         {/* Welcome Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -183,6 +181,5 @@ export default function HomePage() {
           </div>
         </motion.div>
       </div>
-    </Layout>
   )
 }

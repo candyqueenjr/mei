@@ -1,6 +1,5 @@
 'use client'
 
-import Layout from '@/components/Layout'
 import { motion } from 'framer-motion'
 import { useState } from 'react'
 import { 
@@ -83,8 +82,7 @@ export default function RestaurantPage() {
   }
 
   return (
-    <Layout>
-      <div className="space-y-8">
+    <div className="space-y-8">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -304,6 +302,5 @@ export default function RestaurantPage() {
           </motion.div>
         )}
       </div>
-    </Layout>
   )
 }
