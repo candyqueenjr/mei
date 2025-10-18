@@ -9,7 +9,7 @@ interface LayoutProps {
 
 export default function Layout({ children }: LayoutProps) {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-pink-50 to-pink-100">
+    <div className="min-h-screen bg-gradient-to-br from-rose-50 to-rose-100">
       <Navigation />
       <motion.main
         initial={{ opacity: 0, y: 20 }}

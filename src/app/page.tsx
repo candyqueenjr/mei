@@ -38,10 +38,10 @@ export default function HomePage() {
           transition={{ delay: 0.1 }}
           className="text-center"
         >
-          <h1 className="text-4xl font-bold text-pink-700 mb-4">
+          <h1 className="text-4xl font-bold text-rose-700 mb-4">
             Welcome to Your Wedding Planning Dashboard
           </h1>
-          <p className="text-lg text-pink-600 max-w-2xl mx-auto">
+          <p className="text-lg text-rose-600 max-w-2xl mx-auto">
             Plan every detail of your special day with our comprehensive wedding planning tools.
             From venues to dresses, capture and organize everything in one place.
           </p>
@@ -67,7 +67,7 @@ export default function HomePage() {
                 <div className="flex items-center justify-between">
                   <div>
                     <p className="text-sm font-medium text-gray-600">{stat.label}</p>
-                    <p className="text-3xl font-bold text-pink-700">{stat.count}</p>
+                    <p className="text-3xl font-bold text-rose-700">{stat.count}</p>
                   </div>
                   <div className={`${stat.color} p-3 rounded-lg`}>
                     <Icon className="w-6 h-6 text-white" />
@@ -85,7 +85,7 @@ export default function HomePage() {
           transition={{ delay: 0.4 }}
           className="bg-white rounded-xl shadow-lg p-6"
         >
-          <h2 className="text-2xl font-bold text-pink-700 mb-6">Quick Actions</h2>
+          <h2 className="text-2xl font-bold text-rose-700 mb-6">Quick Actions</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             {quickActions.map((action, index) => {
               const Icon = action.icon
@@ -98,12 +98,12 @@ export default function HomePage() {
                   transition={{ delay: 0.5 + index * 0.1 }}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="flex items-center space-x-3 p-4 bg-pink-50 rounded-lg hover:bg-pink-100 transition-colors duration-200 group"
+                  className="flex items-center space-x-3 p-4 bg-rose-50 rounded-lg hover:bg-rose-100 transition-colors duration-200 group"
                 >
-                  <div className="p-2 bg-pink-500 rounded-lg group-hover:bg-pink-600 transition-colors duration-200">
+                  <div className="p-2 bg-rose-500 rounded-lg group-hover:bg-rose-600 transition-colors duration-200">
                     <Icon className="w-5 h-5 text-white" />
                   </div>
-                  <span className="font-medium text-pink-700">{action.label}</span>
+                  <span className="font-medium text-rose-700">{action.label}</span>
                 </motion.a>
               )
             })}
@@ -117,7 +117,7 @@ export default function HomePage() {
           transition={{ delay: 0.6 }}
           className="bg-white rounded-xl shadow-lg p-6"
         >
-          <h2 className="text-2xl font-bold text-pink-700 mb-6">Recent Activity</h2>
+          <h2 className="text-2xl font-bold text-rose-700 mb-6">Recent Activity</h2>
           <div className="space-y-4">
             {[
               { action: 'Added new restaurant', item: 'Garden Venue', time: '2 hours ago' },
@@ -130,12 +130,12 @@ export default function HomePage() {
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.7 + index * 0.1 }}
-                className="flex items-center space-x-4 p-3 bg-pink-50 rounded-lg"
+                className="flex items-center space-x-4 p-3 bg-rose-50 rounded-lg"
               >
-                <div className="w-2 h-2 bg-pink-500 rounded-full"></div>
+                <div className="w-2 h-2 bg-rose-500 rounded-full"></div>
                 <div className="flex-1">
                   <p className="text-sm font-medium text-gray-700">
-                    {activity.action}: <span className="text-pink-600">{activity.item}</span>
+                    {activity.action}: <span className="text-rose-600">{activity.item}</span>
                   </p>
                   <p className="text-xs text-gray-500">{activity.time}</p>
                 </div>
@@ -151,7 +151,7 @@ export default function HomePage() {
           transition={{ delay: 0.8 }}
           className="bg-white rounded-xl shadow-lg p-6"
         >
-          <h2 className="text-2xl font-bold text-pink-700 mb-6">Planning Progress</h2>
+          <h2 className="text-2xl font-bold text-rose-700 mb-6">Planning Progress</h2>
           <div className="space-y-4">
             {[
               { task: 'Venue Selection', progress: 80, color: 'bg-blue-500' },
